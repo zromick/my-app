@@ -2,32 +2,28 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button'
+import { Toolbar, AppBar } from '@material-ui/core';
 
 function App() {
   var value = 0;
-  
+
   function incrementVariable() {
     value += 1;
     console.log(value);
   }
 
   return (
-    <div className="App">
+    <AppBar position = "static">
+      <Toolbar>
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Button variant="contained" color = "primary" onClick={incrementVariable}>
           Increment Me!
         </Button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
+      </Toolbar>
+    </AppBar>
   );
 }
 
