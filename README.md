@@ -1,3 +1,5 @@
+This project is a simple app that increments a variable on screen with a button
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
