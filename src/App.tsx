@@ -2,6 +2,12 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Toolbar, AppBar, Snackbar, Grid } from '@material-ui/core';
 
+enum Buttons {
+  Button1,
+  Button2,
+  Button3,
+}
+
 export interface AppProps {
 }
 
@@ -12,7 +18,7 @@ export interface AppState {
   button3: number,
 }
 
-class App extends React.Component<AppProps, AppState>{
+class App extends React.Component<AppProps,AppState>{
 
 constructor(props:AppProps) {
   super(props)
@@ -24,24 +30,24 @@ constructor(props:AppProps) {
   }
 }
 
-incrementVariable = (whichButton:string) => {
+incrementVariable = (whichButton:Buttons) => {
   const {
     button1,
     button2,
     button3,
   } = this.state;
   switch (whichButton) {
-    case "button1":
+    case Buttons.Button1:
       this.setState({
         button1: button1 + 1
       });
       break;
-    case "button2":
+    case Buttons.Button2:
       this.setState({
         button2: button2 + 1
       });
       break;
-    case "button3":
+    case Buttons.Button3:
       this.setState({
         button3: button3 + 1
       });
@@ -66,7 +72,7 @@ incrementVariable = (whichButton:string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button1")} 
+                onClick={() => this.incrementVariable(Buttons.Button1)} 
                 fullWidth={true}
                 disabled={button1 === 10}
               >
@@ -80,11 +86,11 @@ incrementVariable = (whichButton:string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button2")} 
+                onClick={() => this.incrementVariable(Buttons.Button2)} 
                 fullWidth={true}
                 disabled={button2 === 10}
               >
-                Click Me!
+                Click Me, Please!
                 <br></br>
                 {button2}
               </Button>
@@ -94,7 +100,7 @@ incrementVariable = (whichButton:string) => {
                 color="secondary"
                 variant="outlined"
                 size="small"
-                onClick={() => this.incrementVariable("button3")} 
+                onClick={() => this.incrementVariable(Buttons.Button3)} 
                 fullWidth={true}
                 disabled={button3 === 10}
               >
